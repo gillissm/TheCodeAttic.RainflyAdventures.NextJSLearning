@@ -1,0 +1,57 @@
+.beigeBG{
+    background-color: #DDC7A0;
+    color: #722720;
+}
+
+.desertsunBG{
+    background-color: #c87620;
+    color: #736013;
+}
+
+.oliveBG{
+    background-color:#736013;
+    color: #c87620;
+}
+.crimsonBG{
+    background-color: #722720;
+    color: #ddc7a0;
+}
+.tangerine{
+    fill:#c87620;
+    color:#E39E30;
+}
+
+/* https://www.canva.com/colors/color-palettes/autumn-squash/*/
+.band{
+    height: 50px;
+    width: 100%;
+}
+.wrapper{
+    display: inline-block;
+}
+.leftSidebar{
+    width: 20%;
+    margin-right: 5px;
+   
+    display: inline-flexbox;
+    position: relative;
+    float: left;
+}
+
+.noDecoration{
+    list-style: none;
+}
+
+.mainBody{
+    width: 75%;
+    margin-right: 5px;
+    position: relative;
+    float: left;
+    border-left: solid 1px grey;
+    padding-left: 5px;
+}
+
+.largeFont{
+    font-size: 24px;
+    text-align: center;
+}

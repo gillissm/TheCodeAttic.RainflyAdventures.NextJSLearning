@@ -4,13 +4,22 @@ body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+    font-size: large;
 }
 
 a {
   color: inherit;
   text-decoration: none;
 }
-
+.largeFont{
+  font-size:16px;
+}
 * {
   box-sizing: border-box;
+}
+
+.oliveBG{
+  background-color:#736013;
+  color: #c87620;
+  
 }

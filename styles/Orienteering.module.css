@@ -1,0 +1,24 @@
+.wrapper{
+    display: inline-block;
+}
+.leftSidebar{
+    width: 20%;
+    margin-right: 5px;
+   
+    display: inline-flexbox;
+    position: relative;
+    float: left;
+}
+
+.noDecoration{
+    list-style: none;
+}
+
+.mainBody{
+    width: 75%;
+    margin-right: 5px;
+    position: relative;
+    float: left;
+    border-left: solid 1px grey;
+    padding-left: 5px;
+}
