@@ -17,7 +17,7 @@ const FallHike: NextPageWithLayout = () => {
             <main>
                 <h2 className={styles.beigeBG}><Image src="/hike.svg" alt="Hiking Person" height="60px" width="120px"></Image> Fall Leaf Hike </h2>
                 <div className={`${styles.crimsonBG} ${styles.largeFont}`}>
-                    Enjoy a colorful hike which concludes with leaf piles for jumping, warm coco, and s'mores.
+                    Enjoy a colorful hike which concludes with leaf piles for jumping, warm coco, and s&apos;mores.
                     <br />
                     <Image src='/fire.svg' alt='Warm Fire' className={styles.tangerine} height='100px' width='100px'></Image>
                 </div>

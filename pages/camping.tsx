@@ -6,7 +6,6 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCircle, faCampground } from '@fortawesome/free-solid-svg-icons'
 
 const Camping: NextPage = () => {
-
     return (
         <>
             <Head>
@@ -17,8 +16,11 @@ const Camping: NextPage = () => {
                     <span className="fa-5x">
                         <FontAwesomeIcon icon={faCampground} className={styles.textPrimary} />
                     </span>
-                    <Link href="/camping/glamping"><a className={styles.serviceHeading}><h4>Glamorous Camp</h4></a></Link>
-                    <p className={styles.textMuted}>The perfect getaway, for those that want to be in the great outdoors but still enjoy all the comforts of home.</p>
+                    <Link href="/camping/glamping">
+                        <a className={styles.serviceHeading}><h4>Glamorous Camp</h4></a>
+                    </Link>
+                    <p className={styles.textMuted}>The perfect getaway, for those that 
+                        want to be in the great outdoors but still enjoy all the comforts of home.</p>
                 </div>
                 <div className={styles.card}>
                     <span className="fa-5x">
@@ -31,8 +33,9 @@ const Camping: NextPage = () => {
                     <span className="fa-5x">
                         <FontAwesomeIcon icon={faCampground} className={styles.textPrimary} />
                     </span>
-                    <Link href="/camping/backwoods"><a className={styles.serviceHeading}><h4>One with Nature </h4></a></Link>
-                    <p className={styles.textMuted}>Ready to unplug? Experience the outdoors, the way they are meant to be.</p>
+                    <a href="/camping/backwoods" className={styles.serviceHeading}><h4>One with Nature </h4></a>
+                    <p className={styles.textMuted}>Ready to unplug?
+                        Experience the outdoors, the way they are meant to be.</p>
                 </div>
             </div>
         </>

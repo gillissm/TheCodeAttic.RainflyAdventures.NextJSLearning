@@ -3,10 +3,11 @@ import * as CreateMenu from '../services/createMenu'
 import Image from 'next/image'
 import styles from '../../styles/header.module.css'
 import Link from "next/link"
+import { FooterProps } from '../models/footer.props';
 
 
 
-function Footer(props) {
+function Footer(props: FooterProps) {
 
     const classStyle = props.styleName ? props.styleName : 'footerBG';
     //`${styles.footer} ${props.styleName}`

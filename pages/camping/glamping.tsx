@@ -23,7 +23,7 @@ const Glamping: NextPage = () => {
             <div>
                 <p>Need a sense of adventure, but not looking to rough it?</p>
                 <p>Rainfly Adventures provides the best of the great outdoors with the comfort of feeling right at home. Our luxury cabins bring the wilderness right to your doorstep, but rest easy knowing that is where it will stay.</p>
-                <p>Each lodging comes fully furnished with all of the best amenities, including Free WiFi. Whether you want to take your office to the forest or just enjoy the scenery with style, we've got you covered!</p>
+                <p>Each lodging comes fully furnished with all of the best amenities, including Free WiFi. Whether you want to take your office to the forest or just enjoy the scenery with style, we&apos;ve got you covered!</p>
             </div>
         </>
     );

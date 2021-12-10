@@ -3,10 +3,11 @@ import * as CreateMenu from '../services/createMenu'
 import Image from 'next/image'
 import styles from '../../styles/header.module.css'
 import Link from "next/link"
+import { HeaderProps } from '../models/header.props';
 
 
 
-function Header(props) {
+function Header(props:HeaderProps) {
     return (
         <div className={ styles.header}>
             <div className={styles.logo}>

@@ -3,9 +3,9 @@ import styles from '../../styles/Home.module.css'
 import Header from './header'
 import Footer from './footer'
 
-const fetcher = (url) => fetch(url).then((res) => res.json());
+const fetcher = (url: RequestInfo) => fetch(url).then((res) => res.json());
 
-export default function Layout({ children }) {
+export default function Layout({ children }:{   children: React.ReactNode}) {
     const { data, error } = useSWR('/api/navigation', fetcher)
 
     if (error) return <div>Failed to load, </div>
@@ -13,11 +13,11 @@ export default function Layout({ children }) {
 
     return (
         <>
-            <Header menu={data}></Header>
+            <Header menu={data} WelcomeMessage=''></Header>
             <div className={styles.container}>
                 <main className={styles.main}>{children}</main>
             </div>
-            <Footer></Footer>
+            <Footer styleName=''></Footer>
         </>
     );
 }

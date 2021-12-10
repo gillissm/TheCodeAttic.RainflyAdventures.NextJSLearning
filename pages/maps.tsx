@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 import type { NextPageWithLayout } from '../lib/models/global-types'
 import Head from 'next/head'
 import Footer from '../lib/components/footer'
@@ -10,7 +11,7 @@ const Orienteering: NextPageWithLayout = () => {
 
     return (
         <>
-            <Head>
+            <Head >
                 <title>A thinking Sport!</title>
             </Head>
             <main>
@@ -18,8 +19,8 @@ const Orienteering: NextPageWithLayout = () => {
 
                 <div>
                     <p>Orienteering is the sport of navigation—often held in unfamiliar terrain—using a map and compass.</p>
-                    <p>It's easy to learn and a fun way to exercise your body and mind as you enjoy the outdoors.</p>
-                    <p>It's a sport for everyone and beginners are always welcome.</p>
+                    <p>It&apos;s easy to learn and a fun way to exercise your body and mind as you enjoy the outdoors.</p>
+                    <p>It&apos;s a sport for everyone and beginners are always welcome.</p>
                 </div>
             </main>
         </>
@@ -42,7 +43,7 @@ Orienteering.getLayout = function getLayout(page: ReactElement) {
                     {page}
                 </div> 
             </div>
-            <Footer></Footer>
+            <Footer styleName="oliveBG"></Footer>
         </>
     )
 }

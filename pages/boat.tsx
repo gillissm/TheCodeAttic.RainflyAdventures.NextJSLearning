@@ -12,7 +12,7 @@ const Boat: NextPage = () => {
             </Head>
             <main>               
                 <div>
-                    Let's get wet.
+                    Let&apos;s get wet.
                 </div>
             </main>
             <footer>
