@@ -1,9 +1,10 @@
+/* eslint-disable react/jsx-key */
 import * as CreateMenu from '../services/createMenu'
 
 import Image from 'next/image'
 import styles from '../../styles/header.module.css'
 import Link from "next/link"
-import { HeaderProps } from '../models/header.props';
+import { HeaderProps, MenuItemModel } from '../models/header.props';
 
 
 
@@ -21,11 +22,10 @@ function Header(props:HeaderProps) {
                 <div className={styles.topRow}>
                     <label>{props.WelcomeMessage}</label>
                 </div>
-                <div className={styles.bottomRow}>
-                    <label><Link href={props.menu[0].link}><a> {props.menu[0].name}</a></Link></label>
-                    <label><Link href={props.menu[1].link}><a> {props.menu[1].name}</a></Link></label>
-                    <label><Link href={props.menu[2].link}><a> { props.menu[2].name}</a></Link></label>
-                    <label><Link href={props.menu[3].link}><a> { props.menu[3].name}</a></Link></label>
+                <div className={styles.bottomRow}>                    
+                    {props.menu.map((item: MenuItemModel) => (
+                        <label><Link href={item.link}><a> {item.name}</a></Link></label>
+                    ))}                 
                 </div>
             </div>
         </div>

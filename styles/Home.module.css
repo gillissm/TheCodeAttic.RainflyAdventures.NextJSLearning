@@ -132,3 +132,16 @@
 .textMuted{
     color: #6c757d !important;
 }
+
+.marshGreen{
+  color: #a2a132;
+}
+.marshGreenBG{
+  background-color: #a2a132;
+}
+.wheatYellow{
+  color: #c2a176;
+}
+.wheatYellowBG{
+  background-color: #c2a176;
+}

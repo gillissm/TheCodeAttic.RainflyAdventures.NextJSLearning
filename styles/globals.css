@@ -23,3 +23,29 @@ a {
   color: #c87620;
   
 }
+
+.containerColumn {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  justify-content: space-evenly;
+}
+
+.containerRow {
+  display: flex;
+  flex-direction: row;
+  gap: 25px;
+  justify-content: space-evenly;
+}
+
+.centerContainerItem {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.standardContainerItem {
+  display: flex;
+  align-self: flex-start;
+  justify-content: center;
+}

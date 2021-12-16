@@ -21,9 +21,9 @@ function topLevelPages(directoryName: string): MenuItem[] {
         { link: '/camping', name: 'Camping' },
         { link: '/boat', name: 'Boating' },
         { link: '/hike', name: 'Hike' },
-        { link: '/maps', name: 'Orienteering' }
+        { link: '/maps', name: 'Orienteering' },
+        { link: '/adventure-planning', name: 'Plan an Adventure'}
     ];
-
 }
 
 export type { MenuItem };
