@@ -24,7 +24,7 @@ function Header(props:HeaderProps) {
                 </div>
                 <div className={styles.bottomRow}>                    
                     {props.menu.map((item: MenuItemModel) => (
-                        <label><Link href={item.link}><a> {item.name}</a></Link></label>
+                        <label key={item.name}><Link href={item.link}><a> {item.name}</a></Link></label>
                     ))}                 
                 </div>
             </div>
