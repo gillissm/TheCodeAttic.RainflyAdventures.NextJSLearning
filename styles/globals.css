@@ -18,6 +18,15 @@ a {
   box-sizing: border-box;
 }
 
+a.buttonFeel{
+  border: 1px solid #736013;
+  border-radius: 5%;
+}
+
+a.buttonFeel:hover{
+  text-decoration: underline;
+}
+
 .oliveBG{
   background-color:#736013;
   color: #c87620;
