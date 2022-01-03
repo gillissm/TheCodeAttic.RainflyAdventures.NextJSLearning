@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { NextPageWithLayout } from '../lib/models/global-types';
 import { UserProfileContext } from '../lib/context/userProfile.context';
 import UserProfileContextLayout from '../lib/components/userProfileContext.layout';
+import { NPSActivity } from '../lib/models/npsActivity.model';
 
 // Page used to set a custom username into the UserProfile Context
 
@@ -40,6 +41,18 @@ const UserProfile: NextPageWithLayout = () => {
 
                     {/* 2c. Setup the button click for submitting a new username. */}
                     <button onClick={submitNewUsername}>Submit New Username</button>
+                </div>
+            </div>
+            <br></br>
+            <div className='containerColumn'>
+                <div className='containerColumn'>
+                    <span>Currently Interested Activities:</span>
+                    {/* #. Display to show what current interest activities are */}
+                    <ul id="actData">
+                        {userContext.userProfileObj.preferredActivities.map((act: NPSActivity) => (
+                            <li key={act.ActivityId}>{act.ActivityName}</li>
+                        ))}
+                    </ul>
                 </div>
                 <Link href='/adventure-planning'><a className='oliveBG buttonFeel'>Start Planning an Adventure</a></Link>
             </div>

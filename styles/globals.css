@@ -20,7 +20,8 @@ a {
 
 a.buttonFeel{
   border: 1px solid #736013;
-  border-radius: 5%;
+  border-radius: 25%;
+  padding: 5px;
 }
 
 a.buttonFeel:hover{
@@ -32,7 +33,10 @@ a.buttonFeel:hover{
   color: #c87620;
   
 }
-
+.beigeBG{
+  background-color: #DDC7A0;
+  color: #722720;
+}
 .containerColumn {
   display: flex;
   flex-direction: column;
