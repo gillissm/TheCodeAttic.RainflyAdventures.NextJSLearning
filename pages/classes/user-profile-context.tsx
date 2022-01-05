@@ -2,10 +2,9 @@ import Head from 'next/head';
 import { ReactElement } from 'react';
 import React from 'react';
 import Link from 'next/link';
-import ProfileLayout from '../lib/components/userProfileContext.layout';
-import { NextPageWithLayout } from '../lib/models/global-types';
-import { UserProfileContext } from '../lib/context/userProfile.context';
-import UserProfileContextLayout from '../lib/components/userProfileContext.layout';
+import { NextPageWithLayout } from '../../lib/models/global-types';
+import { UserProfileContext } from '../../lib/context/userProfile.context';
+import UserProfileContextLayout from '../../lib/components/userProfileContext.layout';
 
 // Page used to set a custom username into the UserProfile Context
 
@@ -41,10 +40,12 @@ const UserProfileContextPage: NextPageWithLayout = () => {
 
                                     {/* 2e. Retrieve the current profile object and update it with the newly entered value */ }
                                     let temp = value?.userProfileObj;
-                                    temp.userName = newUsername.current.value;
+                                    if (temp) {
+                                        temp.userName = newUsername?.current?.value??'';
 
-                                    {/* 2f. Leveraging the state setter method from context, update the user profile */ }
-                                    value?.setUserProfile(temp);
+                                        {/* 2f. Leveraging the state setter method from context, update the user profile */ }
+                                        value?.setUserProfile(temp);
+                                    }
                                 }}>Submit New Username</button>
                             </>
                         }

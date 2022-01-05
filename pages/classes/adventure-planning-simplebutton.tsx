@@ -1,20 +1,26 @@
 import type { NextPage } from 'next';
 import Head from 'next/head';
-import styles from '../styles/Home.module.css';
-import { NPSActivity } from '../lib/models/npsActivity.model';
-import { getNPSActivityList } from '../lib/services/nationalParkService';
+import styles from '../../styles/Home.module.css';
+import { NPSActivity } from '../../lib/models/npsActivity.model';
+import { getNPSActivityList } from '../../lib/services/nationalParkService';
 
 const AdventurePlanning: NextPage = () => {
     const getActivityList = () => {
         getNPSActivityList()
             .then((activityList: NPSActivity[]) => {
-                document.getElementById('actData').innerHTML = activityList.map((act: NPSActivity) => {
-                    return `<li>${act.ActivityName} known as ${act.ActivityId}</li>`;
-                }).join(' ');
+                let datalist = document.getElementById('actData');
+                if (datalist) {
+                    datalist.innerHTML = activityList.map((act: NPSActivity) => {
+                        return `<li>${act.ActivityName} known as ${act.ActivityId}</li>`;
+                    }).join(' ');
+                }
              })
             .catch((error: any) => { 
                 console.error(error);
-                document.getElementById('actData').innerHTML = '<li> no new records to display </li>';
+                let datalist = document.getElementById('actData');
+                if (datalist) {
+                    datalist.innerHTML = '<li> no new records to display </li>';
+                }
             });
     };
 

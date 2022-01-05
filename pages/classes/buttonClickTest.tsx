@@ -1,9 +1,9 @@
 import type { NextPage } from 'next';
 import Head from 'next/head';
-import styles from '../styles/Home.module.css';
-import { NPSActivity } from '../lib/models/npsActivity.model';
-import ImageBorder from '../lib/components/imageBorder.module';
-import { DisplayImageModel } from '../lib/models/displayImage.model';
+import styles from '../../styles/Home.module.css';
+import { NPSActivity } from '../../lib/models/npsActivity.model';
+import ImageBorder from '../../lib/components/imageBorder.module';
+import { DisplayImageModel } from '../../lib/models/displayImage.model';
 import { useState } from 'react';
 
 const TestButtonClick: NextPage = () => {

@@ -22,10 +22,12 @@ const UserProfile: NextPageWithLayout = () => {
     function submitNewUsername() {
         {/* 1.5a-1. Retrieve the current profile object and update it with the newly entered value */ }
         let temp = userContext?.userProfileObj;
-        temp.userName = newUsername.current.value;
+        if (temp) {
+            temp.userName = newUsername?.current?.value??'Guest';
 
-        {/* 1.5b-2. Leveraging the state setter method from context, update the user profile */ }
-        userContext?.setUserProfile(temp);
+            {/* 1.5b-2. Leveraging the state setter method from context, update the user profile */ }
+            userContext?.setUserProfile(temp);
+        }
     }
     // 2. HTML Render
     return (
@@ -49,7 +51,7 @@ const UserProfile: NextPageWithLayout = () => {
                     <span>Currently Interested Activities:</span>
                     {/* #. Display to show what current interest activities are */}
                     <ul id="actData">
-                        {userContext.userProfileObj.preferredActivities.map((act: NPSActivity) => (
+                        {userContext?.userProfileObj?.preferredActivities.map((act: NPSActivity) => (
                             <li key={act.ActivityId}>{act.ActivityName}</li>
                         ))}
                     </ul>

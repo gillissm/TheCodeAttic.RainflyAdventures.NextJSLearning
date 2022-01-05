@@ -3,10 +3,12 @@ import { NPSActivity } from '../models/npsActivity.model';
 import { NPSParkModel } from '../models/npsPark.model';
 
 const _npsAPIUrl = 'https://developer.nps.gov/api/v1';
-const _npsKey = 'OcZVyAx6wchTN38jBcj73cHJWg82Q8X5khRVJRcN';
+const _npsKey = process.env.NEXT_PUBLIC_NPS_API_KEY;
 
 export async function getNPSActivityList(): Promise<NPSActivity[]> {
-    const response = await fetch('https://developer.nps.gov/api/v1/activities?api_key=OcZVyAx6wchTN38jBcj73cHJWg82Q8X5khRVJRcN');
+    const apiRequestUrl = `${_npsAPIUrl}/activities?api_key=${_npsKey}`;
+
+    const response = await fetch(apiRequestUrl);
     if (response.ok) {
         const data = await response.json();
         return data.data.map(
@@ -21,7 +23,6 @@ export async function getNPSActivityList(): Promise<NPSActivity[]> {
         console.error(response.statusText);
         return [];
     }
-
 }
 
 export async function getParksForActivity(activityId: string): Promise<NPSParkModel[] | null> {

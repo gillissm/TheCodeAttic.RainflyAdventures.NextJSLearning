@@ -1,29 +1,30 @@
 import type { NextPage } from 'next';
 import Head from 'next/head';
-import styles from '../styles/Home.module.css';
-import { NPSActivity } from '../lib/models/npsActivity.model';
-import { getNPSActivityList } from '../lib/services/nationalParkService';
-import { useState } from 'react';
+import styles from '../../styles/Home.module.css';
+import { NPSActivity } from '../../lib/models/npsActivity.model';
+import { getNPSActivityList } from '../../lib/services/nationalParkService';
+import { useEffect, useState } from 'react';
 
 const AdventurePlanning: NextPage = () => {
+    // 1. Configure state for activityList
+    const [activityList, setActivityList] = useState<NPSActivity[]>([{ ActivityId: '0', ActivityName: "No Activities Loaded" }])
 
-    // 1. Define the state for 'activityList'.
-    //  setting the initial load value to a simple No Activities message
-    const [activityList, setActivityList] = useState<NPSActivity[]>([{ ActivityId:'0', ActivityName:"No Activities Loaded" }])
+    // 2. Define useEffect, by setting the function as our list get logic
+    useEffect(() => {
 
-    const getActivityList = () => {
         getNPSActivityList()
             .then((newActivityList: NPSActivity[]) => {
-                // 2. Removed the loop which created the HTML and instead set the newly loaded data into the 'activityList' variable
-                // This uses the setter method defined and returned as part of the useState method declaration, see line 12.
+                // 3. State setter method to assign the data into the state variable
                 setActivityList(newActivityList);
             })
             .catch((error: any) => {
                 console.error(error);
                 setActivityList([{ ActivityId: '0', ActivityName: "No Activities Found" }]);
             });
-    };
+        // 4. Blank array of dependencies so the method only triggers after the first render.
+    }, []);
 
+    // 5. HTML Render
     return (
         <>
             <Head>
@@ -34,19 +35,17 @@ const AdventurePlanning: NextPage = () => {
                     <div className='centerContainerItem'>
                         <h4 className={styles.serviceHeading}>Start Your Adventure Here...</h4>
                     </div>
-                    <button onClick={getActivityList}> Get Activities</button>
                     <div className='containerColumn'>
                         <ul id="actData">
-                            {/* 3. render the data as found in our state variable */}
                             {activityList.map((act: NPSActivity) => (
                                 <li key={act.ActivityId}>{act.ActivityName} known as {act.ActivityId}</li>
                             ))}
                         </ul>
+
                     </div>
                 </div>
             </div>
         </>
     );
 };
-
 export default AdventurePlanning;

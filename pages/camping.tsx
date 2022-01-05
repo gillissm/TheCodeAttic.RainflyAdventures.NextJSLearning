@@ -19,7 +19,7 @@ const Camping: NextPage = () => {
                     <Link href="/camping/glamping">
                         <a className={styles.serviceHeading}><h4>Glamorous Camp</h4></a>
                     </Link>
-                    <p className={styles.textMuted}>The perfect getaway, for those that 
+                    <p className={styles.textMuted}>The perfect getaway, for those that
                         want to be in the great outdoors but still enjoy all the comforts of home.</p>
                 </div>
                 <div className={styles.card}>
@@ -33,7 +33,9 @@ const Camping: NextPage = () => {
                     <span className="fa-5x">
                         <FontAwesomeIcon icon={faCampground} className={styles.textPrimary} />
                     </span>
-                    <a href="/camping/backwoods" className={styles.serviceHeading}><h4>One with Nature </h4></a>
+                    <Link href="/camping/backwoods">
+                        <a className={styles.serviceHeading}><h4>One with Nature </h4></a>
+                    </Link>
                     <p className={styles.textMuted}>Ready to unplug?
                         Experience the outdoors, the way they are meant to be.</p>
                 </div>

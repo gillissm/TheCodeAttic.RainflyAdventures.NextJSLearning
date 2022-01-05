@@ -8,7 +8,6 @@ import { NextPageWithLayout } from '../lib/models/global-types';
 import UserProfileContextLayout from '../lib/components/userProfileContext.layout';
 import { UserProfileContext } from '../lib/context/userProfile.context';
 
-
 // 1. Page is based on the custom NextPage type which allows for the defintion of a custom layout
 // --- Being able to set a custom layout allows for wrapping the page into the User Context Provider, without having to define all parts of it.
 const AdventurePlanning: NextPageWithLayout = () => {
@@ -46,12 +45,12 @@ const AdventurePlanning: NextPageWithLayout = () => {
             {/* 4b-1. Retrieve the current profile objects list of preferred activities to ensure existing values are kept */ }
             let temp = userContextObject?.userProfileObj?.preferredActivities;
             {/* 4b-2. Add the newly selected activity to the list of preferred activities */ }
-            temp.push(al);
+            temp?.push(al);
 
             {/* 4b-3. Leveraging the state setter method from context, update the user profile */ }
-            userContextObject.setUserProfile({
-                userName: userContextObject.userProfileObj.userName,
-                preferredActivities: temp
+            userContextObject?.setUserProfile({
+                userName: userContextObject?.userProfileObj?.userName??'',
+                preferredActivities: temp??[]
             });
         }
     };
@@ -66,7 +65,7 @@ const AdventurePlanning: NextPageWithLayout = () => {
                 <div className='containerColumn'>
                     <div className='centerContainerItem'>
                         {/* 5a. Grab the username from context to welcome the user by name. */}
-                        <h4 className={styles.serviceHeading}>Welcome {userContextObject.userProfileObj.userName}</h4>
+                        <h4 className={styles.serviceHeading}>Welcome {userContextObject?.userProfileObj?.userName}</h4>
                     </div>
                     <div className='centerContainerItem'>
                         <h5>Get Ready to Start Planning Your Adventure...</h5>
@@ -86,7 +85,7 @@ const AdventurePlanning: NextPageWithLayout = () => {
                     <div className='containerColumn'>
                         {/* 5b. Display to show what currently preferred activities from context */}
                         <ul id="actData">
-                            {userContextObject.userProfileObj.preferredActivities.map((act: NPSActivity) => (
+                            {userContextObject?.userProfileObj?.preferredActivities.map((act: NPSActivity) => (
                                 <li key={act.ActivityId}>{act.ActivityName}</li>
                             ))}
                         </ul>

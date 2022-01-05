@@ -1,6 +1,6 @@
 import { DailyWeatherModel } from '../models/weather.model';
 
-const OpenWeatherAPIKey = '2cdcbab237a4438f389d08c08be35006';
+const OpenWeatherAPIKey = process.env.OPENWEATHER_API_KEY;
 
 export async function getCurrentWeather(zipcode:string):Promise<DailyWeatherModel[]> {
     const apiRequestUrl = `https://api.openweathermap.org/data/2.5/forecast?zip=${zipcode}&appid=${OpenWeatherAPIKey}&units=imperial`;
