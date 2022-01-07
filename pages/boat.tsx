@@ -25,7 +25,7 @@ const Boat: NextPage = ({ currentWeather, rentals }: InferGetServerSidePropsType
                     <h2>Available Rentals for your location</h2>
                     <div className={styles.grid}>
                         {rentals.map((element: RentalModel) => (
-                            <div className={styles.card}>
+                            <div key={element.rentalName } className={styles.card}>
                                 <span className="fa-2x">
                                     <FontAwesomeIcon icon={faShip} className={styles.textPrimary} />
                                     <h4 className={styles.serviceHeading}>{element.rentalName}</h4>
@@ -34,8 +34,8 @@ const Boat: NextPage = ({ currentWeather, rentals }: InferGetServerSidePropsType
                                 <p className={styles.textMuted}>{element.rentalDescription}</p>
                                 <h5>Rental Rates</h5>
                                 <ul>
-                                    {element.rentalPeriods.map((rate: RentalRates) => (
-                                        <li>${rate.cost.toLocaleString(undefined, {minimumFractionDigits:2})} per {rate.rentalLength.toString()} {rate.rentalPeriod.toString()}</li>
+                                    {element.rentalPeriods.map((rate: RentalRates, index) => (
+                                        <li key={index }>${rate.cost.toLocaleString(undefined, {minimumFractionDigits:2})} per {rate.rentalLength.toString()} {rate.rentalPeriod.toString()}</li>
                                     ))}
                                 </ul>                              
                             </div>
@@ -47,7 +47,7 @@ const Boat: NextPage = ({ currentWeather, rentals }: InferGetServerSidePropsType
                     <h2>Make Sure the Weather is Looking Right</h2>
                     <div className={styles.grid}>
                         {currentWeather.map((element: DailyWeatherModel) => (
-                            <div className={styles.card}>
+                            <div key={element.dateStamp} className={styles.card}>
                                 <h4 className={styles.serviceHeading}>{element.dateStamp}
                                     <span className="fa-1x">
                                         &nbsp; <FontAwesomeIcon icon={faCloudSun} className={styles.textPrimary} />                                    

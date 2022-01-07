@@ -7,7 +7,7 @@ import { HikeModel } from '../lib/models/hike.model';
 import { getHikeRankings } from '../lib/services/getHikeInformation';
 
 
-const Hike: NextPage = ({ latestHikes }:InferGetStaticPropsType<typeof getStaticProps>) => {
+const Hike: NextPage = ({ latestHikes }: InferGetStaticPropsType<typeof getStaticProps>) => {
     return (
         <div>
             <Head>
@@ -20,15 +20,19 @@ const Hike: NextPage = ({ latestHikes }:InferGetStaticPropsType<typeof getStatic
                 <div>
                     <h3>Latest Recommended Hikes</h3>
                     <table>
-                        <tr><th>TRAILNAME</th><th>DISTANCE</th><th>RANKING</th></tr>
-                        {latestHikes.map((hike: HikeModel) => (
-                            <tr><td>{hike.trailname} </td><td>{hike.distance} </td><td>{hike.ranking}</td></tr>
-                        ))}
+                        <thead>
+                            <tr><th>TRAILNAME</th><th>DISTANCE</th><th>RANKING</th></tr>
+                        </thead>
+                        <tbody>
+                            {latestHikes.map((hike: HikeModel) => (
+                                <tr key={hike.trailname }><td>{hike.trailname} </td><td>{hike.distance} </td><td>{hike.ranking}</td></tr>
+                            ))}
+                        </tbody>
                     </table>
                 </div>
             </main>
             <footer>
-          
+
             </footer>
         </div>
     );
