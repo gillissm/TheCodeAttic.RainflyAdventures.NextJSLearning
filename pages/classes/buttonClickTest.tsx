@@ -12,31 +12,31 @@ const TestButtonClick: NextPage = () => {
 
     const imageBorderList: DisplayImageModel[] = [
         {
-            ImageName: 'Arches.jpg',
+            ImageName: 'badges/Arches.jpg',
             AltText: 'NPS Stamp - Arches',
             Height: 150,
             Width: 150
         },
         {
-            ImageName: 'BryceCanyon.jpg',
+            ImageName: 'badges/BryceCanyon.jpg',
             AltText: 'NPS Stamp - BryceCanyon',
             Height: 150,
             Width: 150
         },
         {
-            ImageName: 'CraterLake.jpg',
+            ImageName: 'badges/CraterLake.jpg',
             AltText: 'NPS Stamp - CraterLake',
             Height: 150,
             Width: 150
         },
         {
-            ImageName: 'GrandCanyon.jpg',
+            ImageName: 'badges/GrandCanyon.jpg',
             AltText: 'NPS Stamp - GrandCanyon',
             Height: 150,
             Width: 150
         },
         {
-            ImageName: 'GrandTeton.jpg',
+            ImageName: 'badges/GrandTeton.jpg',
             AltText: 'NPS Stamp - GrandTeton',
             Height: 150,
             Width: 150
