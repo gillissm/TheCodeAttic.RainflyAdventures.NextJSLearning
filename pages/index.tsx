@@ -1,7 +1,5 @@
 import { NextPage } from 'next';
-import type { ReactElement } from 'react'
-import Layout from '../lib/components/layout'
-//import NestedLayout from '../lib/components/nested-layout'\
+import Image from 'next/image'
 import styles from '../styles/Home.module.css'
 
 const Index: NextPage = () => {
@@ -15,6 +13,13 @@ const Index: NextPage = () => {
       <p className={styles.description}>
         Providing outdoor adventures for those who can not leave behind the comforts of home to those who want to return to the basics
       </p>
+      <div>
+        <div>
+          <Image
+            src={}
+          />
+        </div>
+      </div>
 
       <div className={styles.grid}>
         <a href="https://nextjs.org/docs" className={styles.card}>
