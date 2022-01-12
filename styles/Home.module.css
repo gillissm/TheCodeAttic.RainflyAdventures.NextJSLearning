@@ -145,3 +145,16 @@
 .wheatYellowBG{
   background-color: #c2a176;
 }
+.floatText{
+  max-width: 540px
+}
+.floatText p{
+  position: relative;
+  top: 75px;
+  z-index: 100;
+}
+.containerRelative{
+  position: relative;
+  width: 700px;
+  height: 400px;
+}
