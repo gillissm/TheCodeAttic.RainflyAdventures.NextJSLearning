@@ -23,7 +23,7 @@ const TripsIndex: NextPage = () => {
              */}
             {/* Assign the CSS-classname as define in trips.module.css */}
             <p className={tripStyle.tripsComment}>
-                "I take a yearly trip with Rainfly Adventures and have yet to be disappointed. They are always well prepared not matter what issue may come"
+                &quot;I take a yearly trip with Rainfly Adventures and have yet to be disappointed. They are always well prepared not matter what issue may come&quot;
                 <br />
                 {/* Assigning CSS both from the module CSS file as well as the globalcss defined in _app.tsx  */}
                 <span className={` ${tripStyle.tripsCommentUser} oliveBG`}>
